@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
     // Check if a user exist with this phone
     Optional<UserEntity> findDistinctByPhoneNumber(String phone);
+    Optional<UserEntity> findDistinctByEmail(String email);
     //Login user
     UserEntity findByPhoneNumberAndPassword(String phone, String password);
 }

@@ -29,36 +29,39 @@ public class UserService {
         HashMap<String, Object> response = new HashMap<>();
         if (type.equalsIgnoreCase("register")) {
             UserEntity user = new UserEntity();
-            user.setFirstName(userModel.getFirstName());
-            user.setLastName(userModel.getLastName());
             user.setPhoneNumber(userModel.getPhoneNumber());
-            user.setYearOfBirth(userModel.getYearOfBirth());
+            user.setEmail(userModel.getEmail());
+            user.setName(userModel.getName());
             user.setPassword(threeDes.encrypt(userModel.getPassword()));
-            if (userModel.getYearOfBirth() <1963 || user.getYearOfBirth() >2007)
-            {
-                user.setCanBook(false);
-            }else
-            {
-                user.setCanBook(true);
-            }
 
-
-
-            // int emailExist = userRepository.findUserByEmail(userModel.getEmail());
             Optional<UserEntity> phoneExist = userRepository.findDistinctByPhoneNumber(userModel.getPhoneNumber());
-            if (phoneExist.isPresent()) {
+
+            if (phoneExist.isPresent())
+            {
                 response.put("status", "01");
                 response.put("message", " A user exist with the same phone number");
-            } else {
-                userRepository.save(user);
-                response.put("status", "00");
-                response.put("message", "Registered successfully");
+                return response;
             }
+
+            Optional<UserEntity> emailExist = userRepository.findDistinctByEmail(userModel.getEmail());
+
+            if (emailExist.isPresent())
+            {
+                response.put("status", "01");
+                response.put("message", " A user exist with the same email address");
+                return response;
+            }
+
+            userRepository.save(user);
+            response.put("status", "00");
+            response.put("message", "Registered successfully");
+            return response;
+
 
         } else if (type.equalsIgnoreCase("login")) {
 
-            Optional<UserEntity> emailExist = userRepository.findDistinctByPhoneNumber(userModel.getPhoneNumber());
-            if (emailExist.isPresent()) {
+            Optional<UserEntity> phoneNumberExist = userRepository.findDistinctByPhoneNumber(userModel.getPhoneNumber());
+            if (phoneNumberExist.isPresent()) {
                 UserEntity userLoginResponse = userRepository.findByPhoneNumberAndPassword(userModel.getPhoneNumber(), threeDes.encrypt(userModel.getPassword()));
 
                 if (userLoginResponse == null) {

@@ -2,20 +2,19 @@ package com.kibzdev.vac.entities;
 
 
 import javax.persistence.*;
+import java.sql.Blob;
 
 @Entity
-@Table(name = "vac_users")
+@Table(name = "users")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
     private String phoneNumber;
-    private String firstName;
-    private String lastName;
+    private String name;
+    private String email;
     private String password;
-    private long yearOfBirth;
-    private boolean canBook;
-
+    private String images;
 
     public long getUserId() {
         return userId;
@@ -23,14 +22,6 @@ public class UserEntity {
 
     public void setUserId(long userId) {
         this.userId = userId;
-    }
-
-    public boolean isCanBook() {
-        return canBook;
-    }
-
-    public void setCanBook(boolean canBook) {
-        this.canBook = canBook;
     }
 
     public String getPhoneNumber() {
@@ -41,20 +32,20 @@ public class UserEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -63,13 +54,5 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public long getYearOfBirth() {
-        return yearOfBirth;
-    }
-
-    public void setYearOfBirth(long yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
     }
 }
