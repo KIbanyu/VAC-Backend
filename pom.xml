@@ -25,7 +25,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -49,11 +48,6 @@
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.africastalking</groupId>
-            <artifactId>core</artifactId>
-            <version>3.4.2.1</version>
-        </dependency>
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk</artifactId>
