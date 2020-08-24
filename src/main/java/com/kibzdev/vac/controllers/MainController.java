@@ -18,8 +18,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -55,8 +57,11 @@ public class MainController {
     }
 
     @RequestMapping(value = "add-post", method = RequestMethod.POST)
-    public Map<String, Object> addPost(@RequestPart(value = "file") MultipartFile multipartFile,
+    public Map<String, Object> addPost(@RequestPart(value = "file0") MultipartFile multipartFile,
+                                       @RequestPart(value = "file1") MultipartFile multipartFile1,
+                                       @RequestPart(value = "file2") MultipartFile multipartFile2,
                                        @RequestParam String name,
+                                       @RequestParam int count,
                                        @RequestParam String category,
                                        @RequestParam BigDecimal price,
                                        @RequestParam String quantity,
@@ -76,20 +81,31 @@ public class MainController {
 
         String fileUrl = "";
         HashMap<String, Object> response = new HashMap<>();
+        List<MultipartFile> receivedImages = new ArrayList<>();
+        receivedImages.add(multipartFile);
+        receivedImages.add(multipartFile1);
+        receivedImages.add(multipartFile2);
+
+        StringBuilder photosUrl = new StringBuilder();
         try {
 
 
-            //converting multipart file to file
-            File file = convertMultiPartToFile(multipartFile);
+            for (MultipartFile multipartFile3 : receivedImages)
+            {
+                //converting multipart file to file
+                File file = convertMultiPartToFile(multipartFile3);
 
-            //filename
-            String fileName = multipartFile.getOriginalFilename();
+                //filename
+                String fileName = multipartFile3.getOriginalFilename();
 
-            fileUrl = endpointUrl + "/" + "global" + "/" + fileName;
+                fileUrl = endpointUrl + "/" + "global" + "/" + fileName;
+                photosUrl.append(fileUrl).append(",");
 
-            response = uploadFileTos3bucket(fileName, file, "global/");
+                response = uploadFileTos3bucket(fileName, file, "global/");
 
-            file.delete();
+                file.delete();
+            }
+
 
         } catch (Exception e) {
 
@@ -102,7 +118,7 @@ public class MainController {
 
         if (response.get("status").equals("00")) {
 
-            request.setPhotosList(fileUrl);
+            request.setPhotosList(photosUrl.toString());
 
             response = addPostService.addPost(request);
         }
