@@ -67,6 +67,7 @@ public class MainController {
                                        @RequestParam String quantity,
                                        @RequestParam String description,
                                        @RequestParam String location,
+                                       @RequestParam long userId,
                                        @RequestParam String phone) {
 
         PostDateRequest request = new PostDateRequest();
@@ -77,6 +78,7 @@ public class MainController {
         request.setDescription(description);
         request.setLocation(location);
         request.setPhone(phone);
+        request.setCreatedBy(userId);
 
 
         String fileUrl = "";

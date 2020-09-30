@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class AddPostEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String name;
     private String category;
     private BigDecimal price;
@@ -17,6 +17,15 @@ public class AddPostEntity {
     private String location;
     private String phone;
     private String photosList;
+    private long createdBy;
+
+    public long getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(long createdBy) {
+        this.createdBy = createdBy;
+    }
 
     public Long getId() {
         return id;

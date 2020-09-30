@@ -22,6 +22,7 @@ public class AddPostService {
         addPostEntity.setDescription(request.getDescription());
         addPostEntity.setLocation(request.getLocation());
         addPostEntity.setName(request.getName());
+        addPostEntity.setCreatedBy(request.getCreatedBy());
         addPostEntity.setPhone(request.getPhone());
         addPostEntity.setPrice(request.getPrice());
         addPostEntity.setQuantity(request.getQuantity());

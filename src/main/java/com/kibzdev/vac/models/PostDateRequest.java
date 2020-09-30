@@ -16,6 +16,15 @@ public class PostDateRequest {
     private String location;
     private String phone;
     private String photosList;
+    private long createdBy;
+
+    public long getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(long createdBy) {
+        this.createdBy = createdBy;
+    }
 
     public String getName() {
         return name;

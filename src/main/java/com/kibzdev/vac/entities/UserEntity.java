@@ -14,7 +14,6 @@ public class UserEntity {
     private String name;
     private String email;
     private String password;
-    private String images;
 
     public long getUserId() {
         return userId;
