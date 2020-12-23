@@ -1,9 +1,9 @@
-package com.kibzdev.vac.services;
+package com.kibzdev.globalFarm.services;
 
 
-import com.kibzdev.vac.entities.AddPostEntity;
-import com.kibzdev.vac.models.PostDateRequest;
-import com.kibzdev.vac.repository.AddPostRepository;
+import com.kibzdev.globalFarm.entities.AddPostEntity;
+import com.kibzdev.globalFarm.models.PostDateRequest;
+import com.kibzdev.globalFarm.repository.AddPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

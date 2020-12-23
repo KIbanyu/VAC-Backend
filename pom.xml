@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kibzdev</groupId>
-    <artifactId>vac</artifactId>
+    <artifactId>globalFarm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>vac</name>
-    <description>Vac project for Spring Boot</description>
+    <description>GlobalFarm project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>

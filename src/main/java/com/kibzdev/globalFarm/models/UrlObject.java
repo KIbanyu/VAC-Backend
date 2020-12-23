@@ -1,6 +1,4 @@
-package com.kibzdev.vac.models;
-
-import java.util.List;
+package com.kibzdev.globalFarm.models;
 
 public class UrlObject {
 

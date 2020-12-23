@@ -1,4 +1,4 @@
-package com.kibzdev.vac.configurations;
+package com.kibzdev.globalFarm.configurations;
 
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;

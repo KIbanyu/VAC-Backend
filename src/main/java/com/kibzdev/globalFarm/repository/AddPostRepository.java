@@ -1,6 +1,6 @@
-package com.kibzdev.vac.repository;
+package com.kibzdev.globalFarm.repository;
 
-import com.kibzdev.vac.entities.AddPostEntity;
+import com.kibzdev.globalFarm.entities.AddPostEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

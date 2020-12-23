@@ -1,4 +1,4 @@
-package com.kibzdev.vac.utils;
+package com.kibzdev.globalFarm.utils;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 

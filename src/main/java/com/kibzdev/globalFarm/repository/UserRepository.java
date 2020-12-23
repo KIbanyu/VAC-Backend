@@ -1,6 +1,6 @@
-package com.kibzdev.vac.repository;
+package com.kibzdev.globalFarm.repository;
 
-import com.kibzdev.vac.entities.UserEntity;
+import com.kibzdev.globalFarm.entities.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,26 +1,21 @@
-package com.kibzdev.vac.controllers;
-
-
+package com.kibzdev.globalFarm.controllers;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.kibzdev.vac.models.PostDateRequest;
-import com.kibzdev.vac.models.UserModel;
-import com.kibzdev.vac.services.AddPostService;
-import com.kibzdev.vac.services.UserService;
-import com.kibzdev.vac.configurations.AmazonClient;
+import com.kibzdev.globalFarm.models.PostDateRequest;
+import com.kibzdev.globalFarm.models.UserModel;
+import com.kibzdev.globalFarm.services.AddPostService;
+import com.kibzdev.globalFarm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import java.util.List;
 import java.util.Map;
 
@@ -99,12 +94,9 @@ public class MainController {
 
                 //filename
                 String fileName = multipartFile3.getOriginalFilename();
-
                 fileUrl = endpointUrl + "/" + "global" + "/" + fileName;
                 photosUrl.append(fileUrl).append(",");
-
                 response = uploadFileTos3bucket(fileName, file, "global/");
-
                 file.delete();
             }
 

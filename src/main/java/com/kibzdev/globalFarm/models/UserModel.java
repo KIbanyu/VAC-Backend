@@ -1,4 +1,4 @@
-package com.kibzdev.vac.models;
+package com.kibzdev.globalFarm.models;
 
 public class UserModel {
     private String phoneNumber;

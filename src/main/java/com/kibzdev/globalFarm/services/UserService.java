@@ -1,10 +1,10 @@
-package com.kibzdev.vac.services;
+package com.kibzdev.globalFarm.services;
 
 
-import com.kibzdev.vac.entities.UserEntity;
-import com.kibzdev.vac.models.UserModel;
-import com.kibzdev.vac.repository.UserRepository;
-import com.kibzdev.vac.utils.ThreeDes;
+import com.kibzdev.globalFarm.entities.UserEntity;
+import com.kibzdev.globalFarm.models.UserModel;
+import com.kibzdev.globalFarm.repository.UserRepository;
+import com.kibzdev.globalFarm.utils.ThreeDes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.kibzdev.vac.entities;
+package com.kibzdev.globalFarm.entities;
 import javax.persistence.*;
 import java.math.BigDecimal;
 

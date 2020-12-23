@@ -1,4 +1,4 @@
-package com.kibzdev.vac.models;
+package com.kibzdev.globalFarm.models;
 
 
 import java.math.BigDecimal;
