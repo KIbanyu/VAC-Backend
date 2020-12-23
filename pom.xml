@@ -18,14 +18,22 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <exclusions>
-        <exclusion>
-            <groupId>com.vaadin.external.google</groupId>
-            <artifactId>android-json</artifactId>
-        </exclusion>
-    </exclusions>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.vaadin.external.google</groupId>
+                    <artifactId>android-json</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -99,5 +107,8 @@
             </plugin>
         </plugins>
     </build>
+
+
+
 
 </project>
