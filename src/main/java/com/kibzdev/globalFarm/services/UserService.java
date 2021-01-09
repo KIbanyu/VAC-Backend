@@ -31,6 +31,7 @@ public class UserService {
             UserEntity user = new UserEntity();
             user.setPhoneNumber(userModel.getPhoneNumber());
             user.setEmail(userModel.getEmail());
+            user.setCountryCode(userModel.getCountryCode());
             user.setName(userModel.getName());
             user.setPassword(threeDes.encrypt(userModel.getPassword()));
 
