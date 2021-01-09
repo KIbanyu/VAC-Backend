@@ -13,6 +13,15 @@ public class UserEntity {
     private String name;
     private String email;
     private String password;
+    private String countryCode;
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
 
     public Long getUserId() {
         return userId;
