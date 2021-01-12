@@ -45,7 +45,7 @@ public class AddPostService {
 
         if (type.equalsIgnoreCase("recent"))
         {
-            List<AddPostEntity> posts = addPostRepository.getAllByCategoryOrderByIdDesc();
+            List<AddPostEntity> posts = addPostRepository.getTopById();
             response.put("status", "00");
             response.put("data", posts);
             response.put("message", "Success");
