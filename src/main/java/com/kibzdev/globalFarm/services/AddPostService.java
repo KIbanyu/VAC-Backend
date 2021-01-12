@@ -58,7 +58,7 @@ public class AddPostService {
             return response;
         }
 
-        List<AddPostEntity> posts = addPostRepository.getDistinctByCategory(type);
+        List<AddPostEntity> posts = addPostRepository.getDistinctByCategory("there");
         response.put("status", "00");
         response.put("data", posts);
         response.put("message", "Success");
