@@ -158,6 +158,6 @@ public class MainController {
     @RequestMapping(value = "get-recent-posts", method = RequestMethod.GET)
     public Map<String, Object> getRecentPosts() {
 
-        return addPostService.getPost(type);
+        return addPostService.getPost("recent");
     }
 }

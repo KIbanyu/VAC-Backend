@@ -8,4 +8,5 @@ import java.util.List;
 public interface AddPostRepository extends JpaRepository<AddPostEntity, Long> {
 
     List<AddPostEntity> getDistinctByCategory(String type);
+    List<AddPostEntity> findAllByIdOrderByIdDesc();
 }
