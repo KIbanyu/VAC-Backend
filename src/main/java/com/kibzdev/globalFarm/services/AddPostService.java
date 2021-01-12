@@ -43,11 +43,9 @@ public class AddPostService {
         HashMap<String, Object> response = new HashMap<>();
 
 
-
-
         if (type.equalsIgnoreCase("recent"))
         {
-            List<AddPostEntity> posts = addPostRepository.findAllByIdOrderByIdDesc();
+            List<AddPostEntity> posts = addPostRepository.getAllByCategoryOrderByIdDesc();
             response.put("status", "00");
             response.put("data", posts);
             response.put("message", "Success");

@@ -9,4 +9,5 @@ public interface AddPostRepository extends JpaRepository<AddPostEntity, Long> {
 
     List<AddPostEntity> getDistinctByCategory(String type);
     List<AddPostEntity> findAllByIdOrderByIdDesc();
+    List<AddPostEntity> getAllByCategoryOrderByIdDesc();
 }
